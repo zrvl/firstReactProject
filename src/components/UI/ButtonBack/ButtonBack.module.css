@@ -1,0 +1,10 @@
+.back__btn {
+  float: right;
+  width: 270px;
+  font-size: 26px;
+  padding: 10px 15px;
+  border: none;
+  background: #7BE37F;
+  border-radius: 10px;
+  transform: rotate(7.95deg);
+}
