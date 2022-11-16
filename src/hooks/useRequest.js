@@ -7,8 +7,11 @@ export const useRequest = (req) => {
 
   const request = async () => {
     try {
+      console.log(1)
       await req()
+      console.log(3)
     } catch (e) {
+      console.log(2)
       setError(true)
     } finally {
       setTimeout(() => {

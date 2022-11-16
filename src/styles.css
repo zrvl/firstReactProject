@@ -1,5 +1,13 @@
 @import url('https: //fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+.active {
+  border-bottom: 3px solid black;
+}
+
+.disActive {
+  border-bottom: none !important;
+}
+
 body {
   overflow-y: hidden;
 }

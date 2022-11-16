@@ -6,7 +6,7 @@ const Layout = () => {
   return (
     <>
       <header className="header">
-        <NavLink className="logo" to="/">
+        <NavLink className="logo disActive" to="/">
           <img className="logo__img" src={logo} alt="logo"/>
         </NavLink>
         <ul className="header__items">
