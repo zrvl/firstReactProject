@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/firstReactProject/static/css/main.90e93dfe.css",
-    "main.js": "/firstReactProject/static/js/main.33648d6f.js",
+    "main.css": "/firstReactProject/static/css/main.18924cd4.css",
+    "main.js": "/firstReactProject/static/js/main.71ee2d4c.js",
     "static/media/logo.svg": "/firstReactProject/static/media/logo.1b0c91b7c3c81e67a45c1d05a2a53b6c.svg",
     "static/media/blog-header.svg": "/firstReactProject/static/media/blog-header.7c92e144095b193664f8d4df0ca589c3.svg",
     "static/media/prev-arrow.svg": "/firstReactProject/static/media/prev-arrow.510341f9d713cc7d964d25c552d7ef9b.svg",
     "static/media/next-arrow.svg": "/firstReactProject/static/media/next-arrow.499e61258c04f83461c7725d771a7e9c.svg",
     "index.html": "/firstReactProject/index.html",
-    "main.90e93dfe.css.map": "/firstReactProject/static/css/main.90e93dfe.css.map",
-    "main.33648d6f.js.map": "/firstReactProject/static/js/main.33648d6f.js.map"
+    "main.18924cd4.css.map": "/firstReactProject/static/css/main.18924cd4.css.map",
+    "main.71ee2d4c.js.map": "/firstReactProject/static/js/main.71ee2d4c.js.map"
   },
   "entrypoints": [
-    "static/css/main.90e93dfe.css",
-    "static/js/main.33648d6f.js"
+    "static/css/main.18924cd4.css",
+    "static/js/main.71ee2d4c.js"
   ]
 }
