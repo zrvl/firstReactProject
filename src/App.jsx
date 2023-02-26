@@ -5,6 +5,7 @@ import InfoPage from "./pages/InfoPage";
 import ReviewPage from "./pages/ReviewPage";
 import Layout from "./components/Layout";
 import PostPage from './pages/PostPage';
+import PageNotFound from './pages/PageNotFound'
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Route path="post/:id" element={<PostPage/>}/>
         <Route path="info" element={<InfoPage/>}/>
         <Route path="reviews" element={<ReviewPage/>}/>
+        <Route path="*" element={<PageNotFound/>} />
       </Route>
     </Routes>
   );

@@ -14,20 +14,26 @@ function PostPage() {
   const [comments, setComments] = useState([]);
   const {id} = useParams()
 
-  const [requestPost, loadingPost, errorPost] = useRequest(async ()=> {
-    const [response] = await PostAPI.getOne(id);
+  const [requestPost, loadingPost] = useRequest(async ()=> {
+    const response = await PostAPI.getOne(id);
     setOnePost(response);
   })
 
-  const [requestComment, errorComment] = useRequest(async ()=> {
-    const [response] = await PostAPI.getComment(id);
+  const [requestComment, loading, errorComment] = useRequest(async ()=> {
+    const response = await PostAPI.getComment(id);
     setComments(response);
   })
   
   useEffect(() => {
     requestPost();
-    requestComment();
   }, [])
+  
+  useEffect(() => {
+    requestComment();
+  },[OnePost])
+
+
+  console.log(errorComment)
 
   if (loadingPost) {
     return <Loader />
@@ -37,7 +43,10 @@ function PostPage() {
         <OnePost post={onePost} />
         <ButtonBack />
         <div className="post-page__comments">
-          <Comments comments={comments} />
+          {
+            errorComment ?
+            <h1>Error</h1> : <Comments comments={comments} />
+          }
         </div>
       </div>
     )

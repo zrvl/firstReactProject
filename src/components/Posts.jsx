@@ -11,8 +11,8 @@ import Loader from './UI/Loader/Loader';
 import EmptyPosts from './EmptyPosts';
 import { useRequest } from '../hooks/useRequest';
 import { usePagination } from '../hooks/usePagination';
-
-//https://jsonplaceholder.typicode.com/posts?_limit=5
+import ButtonPrev from './UI/Pagination/ButtonPrev/ButtonPrev';
+import ButtonNext from './UI/Pagination/ButtonNext/ButtonNext';
 
 const Posts = () => {
   const [loadPosts, setLoadPosts] = useState([]);
@@ -23,8 +23,9 @@ const Posts = () => {
   const [limit, setLimit] = useState(5);
   const [page, setPage] = useState(1);
   const [totalPosts, setTotalPosts] = useState();
+  let [offset, setOffset] = useState(0);
   const posts = usePost(loadPosts,searchText,isActiveSort);
-  const pages = usePagination(totalPosts, limit, posts);
+  const pages = usePagination(totalPosts, limit, posts, offset);
 
   const [request,loadingPosts,error] = useRequest(async ()=>{
     const [response,totalPosts] = await PostAPI.getAll(limit, page)
@@ -41,12 +42,12 @@ const Posts = () => {
   }, [page])
 
   useEffect(() => {
-    if (posts.length === 0) {
+    if (posts.length === 0 && searchText === '' && error === false) {
       setEmptyPosts(true);
     } else {
       setEmptyPosts(false);
     }
-  }, [posts,loadPosts])
+  }, [posts,loadPosts,error])
 
   if (loadingPosts) {
     return <Loader/>
@@ -63,9 +64,11 @@ const Posts = () => {
                 <Menu value={searchText} setSeacrhText={setSearchText} activeSort={isActiveSort} setActiveSort={setIsActiveSort} />
                 <PostsList className="post__item" error={error} posts={posts} setPosts={setLoadPosts}/>
                 <div className="list__pages">
+                  <ButtonPrev offset={offset} setOffset={setOffset} />
                   {
                     pages.map(page => <span className="list__page" onClick={() => setPage(page)} key={page}>{page}</span>)
                   }
+                  <ButtonNext posts={totalPosts} limit={limit} page={pages} offset={offset} setOffset={setOffset}/>
                 </div>
               </>
             }
@@ -81,11 +84,3 @@ const Posts = () => {
 }
 
 export default Posts;
-
-
-// Сделать Error страницы и страницу 404
-// Сделать стрелочки для пагинации
-// Пофиксить поиск постов
-// Добавление срабатывает не в конец постов, а в конец открытой страницы
-// Сделать чтобы при удалении всех 5 постов на какой то странице, уменьшалось к-во страниц и посты отображались по новому порядку
-// Разобрать компонент COMMENTS, как реализовать нумерацию коментариев. (Работает но не понятно)
