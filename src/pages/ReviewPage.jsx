@@ -1,8 +1,6 @@
-import React from 'react'
+import React from "react";
 
 const ReviewPage = () => {
-  return (
-    <div>Отзывы</div>
-  )
-}
+  return <div className="reviews">Reviews</div>;
+};
 export default ReviewPage;

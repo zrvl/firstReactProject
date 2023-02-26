@@ -274,6 +274,13 @@ button {
   padding: 4px 8px;
   border-radius: 20px;
 }
+.info,
+.reviews,
+.notFound {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .footer {
   border-top: 1px solid #ececec;

@@ -1,17 +1,17 @@
-.post__delete{
+.post__delete {
   position: absolute;
   font-size: 26px;
   top: 50%;
-  right: -50px;
+  right: -35px;
   transform: translate(-50%, -50%);
   border: none;
-  background-color: #FF1414;
+  background-color: #ff1414;
   color: #fff;
-  padding: 10px 12px;
+  padding: 8px 12px;
   border-radius: 20px;
 }
 
-.post__delete:hover{
+.post__delete:hover {
   color: #383838;
   padding-left: 30px;
 }

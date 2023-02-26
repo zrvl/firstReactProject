@@ -12,17 +12,17 @@ const Layout = () => {
         <ul className="header__items">
           <li className="header__item">
             <NavLink className="header__item--link" to="/">
-              Статти
+              Articles
             </NavLink>
           </li>
           <li className="header__item">
             <NavLink className="header__item--link" to="/info">
-              Информация
+              Information
             </NavLink>
           </li>
           <li className="header__item">
             <NavLink className="header__item--link" to="/reviews">
-              Отзывы
+              Reviews
             </NavLink>
           </li>
         </ul>
@@ -31,7 +31,7 @@ const Layout = () => {
         <Outlet />
       </main>
       <footer className="footer">
-        <p>Все права защищены</p>
+        <p>All rights reserved</p>
       </footer>
     </>
   );
